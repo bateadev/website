@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+const allowIndex = import.meta.env.PUBLIC_ALLOW_INDEX === "true";
 ---
 
 <!doctype html>
@@ -10,7 +11,9 @@ import '../styles/global.css';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>BateaDev</title>
+		<meta name="robots" content={allowIndex ? "index, follow" : "noindex, nofollow"} />
+		<title>BateaDev | Desarrollo de software y automatización</title>
+		<meta name="description" content="Creamos software, automatizaciones y soluciones con inteligencia artificial para empresas y emprendedores." />
 	</head>
 	<body>
 		<slot />
